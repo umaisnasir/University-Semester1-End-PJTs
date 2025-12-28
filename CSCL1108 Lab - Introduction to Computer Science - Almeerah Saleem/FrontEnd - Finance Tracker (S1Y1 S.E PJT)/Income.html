@@ -1,0 +1,86 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+<meta charset="UTF-8">
+<meta name="viewport" content="width=device-width, initial-scale=1.0">
+<title>Income | Finance Tracker</title>
+<link rel="stylesheet" href="style.css">
+</head>
+<body>
+
+<aside class="sidebar glass">
+    <img src="assets/logo.png" alt="Logo" class="sidebar-logo" style="width: 70%; height: 17%;">
+    <a href="dashboard.html">Dashboard</a>
+    <a href="income.html" class="active">Income</a>
+    <a href="expenses.html">Expenses</a>
+    <a href="profile.html">Profile</a>
+    <a href="logout.html">Logout</a>
+</aside>
+
+<header class="top-header">
+    <div class="app-logo"><span><i>Spend Less,Save More</i></span></div>
+</header>
+
+<main class="dashboard-grid">
+    <div class="glass-card">
+        <h2>Current Month Total Income</h2>
+        <div class="total-display" id="totalAmountDisplay" style="color: var(--green); font-weight: bold;">PKR 0</div>
+    </div>
+
+    <div class="glass-card">
+        <h2>Add Income</h2>
+        <div class="controls-row">
+            <input type="date" id="inputDate" value="">
+            <select id="inputSource">
+                <option value="Salary">Salary</option>
+                <option value="Bonus">Bonus</option>
+                <option value="Gift">Gift</option>
+            </select>
+            <input type="number" id="inputAmount" value="" placeholder="Amount">
+        </div>
+        <div class="controls-row">
+            <select id="inputMethod">
+                <option value="Cash">Cash</option>
+                <option value="Bank">Bank</option>
+            </select>
+            <button class="btn-action">Add</button>
+        </div>
+    </div>
+
+    <div class="glass-card full-width">
+        <h2>Transaction History</h2>
+        <select id="filterSource">
+            <option value="All">All Sources</option>
+            <option value="Salary">Salary</option>
+            <option value="Bonus">Bonus</option>
+            <option value="Gift">Gift</option>
+        </select>
+
+        <select id="filterDateRange" onchange="toggleCustomDate(this.value)">
+            <option value="All">All Time</option>
+            <option value="LastMonth">Last Month</option>
+            <option value="Last3Months">Last 3 Months</option>
+            <option value="Last6Months">Last 6 Months</option>
+            <option value="LastYear">Last Year</option>
+            <option value="Custom">Custom</option>
+        </select>
+
+        <input type="date" id="startDate" style="display:none">
+        <input type="date" id="endDate" style="display:none">
+
+        <button class="btn-action" id="btnFilterIncome" style="margin-bottom: 15px;">Apply</button>
+
+        <div class="table-container">
+            <table>
+                <thead>
+                    <tr><th>Date</th><th>Source</th><th>Amount</th><th>Method</th></tr>
+                </thead>
+                <tbody id="historyBody"><tr><td colspan="4">No transactions yet</td></tr></tbody>
+            </table>
+        </div>
+    </div>
+</main>
+<script src="script.js"></script>
+
+</body>
+</html>

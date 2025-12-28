@@ -1,0 +1,68 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+<meta charset="UTF-8">
+<title>Expense Manager Dashboard</title>
+<meta name="viewport" content="width=device-width, initial-scale=1.0">
+<link rel="stylesheet" href="Dashboard.css">
+</head>
+<body>
+
+<aside class="sidebar glass">
+    <img src="assets/logo.png" alt="Logo" class="sidebar-logo" style="width: 70%; height: 17%;">
+    <a href="dashboard.html" class="active">Dashboard</a>
+    <a href="income.html">Income</a>
+    <a href="expenses.html">Expenses</a>
+    <a href="profile.html">Profile</a>
+    <a href="logout.html">Logout</a>
+</aside>
+
+<header class="top-header">
+    <div class="app-logo"><span style="font-size: large;"><i>Spend Less,Save More</i></span></div>
+</header>
+
+<main class="dashboard">
+    <!-- SUMMARY GRID -->
+    <section class="summary-grid">
+        <div class="summary-card"><p class="label">Expense Last Month</p><h2 class="amount red">PKR <span id="expLast">0</span></h2></div>
+        <div class="summary-card"><p class="label">Expense This Month</p><h2 class="amount red">PKR <span id="expThis">0</span></h2></div>
+        <div class="summary-card"><p class="label">Income Last Month</p><h2 class="amount green">PKR <span id="incLast">0</span></h2></div>
+        <div class="summary-card"><p class="label">Income This Month</p><h2 class="amount green">PKR <span id="incThis">0</span></h2></div>
+    </section>
+
+    <!-- CONTENT GRID -->
+    <section class="content-grid">
+        <div class="glass-card">
+            <h3>Expense Info</h3>
+            <input type="date" id="date">
+            <select id="category">
+                <option value="">Select Category</option>
+                <option>Food & Drinks</option>
+                <option>Utilities</option>
+                <option>Groceries</option>
+                <option>Shopping</option>
+                <option>Transport</option>
+                <option>Entertainment</option>
+                <option>Health & Fitness</option>
+                <option>Home</option>
+                <option>Savings & Investments</option>
+                <option>Custom</option>
+            </select>
+            <input type="text" id="spentOn" placeholder="Spent On">
+            <input type="number" id="amount" placeholder="Amount (PKR)">
+            <button onclick="addExpense()">Add Expense</button>
+        </div>
+        <div class="glass-card">
+            <h3>Recent Expenses</h3>
+            <ul id="expenseList"><li>No expenses yet</li></ul>
+        </div>
+        <div class="glass-card">
+            <h3>Recent Incomes</h3>
+            <ul id="incomeList"><li><span>—</span><span class="amount green">PKR 0</span></li></ul>
+        </div>
+    </section>
+</main>
+
+<script src="script.js"></script>
+</body>
+</html>

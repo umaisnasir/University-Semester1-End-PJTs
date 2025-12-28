@@ -1,0 +1,59 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+<meta charset="UTF-8">
+<meta name="viewport" content="width=device-width, initial-scale=1.0">
+<title>Profile | Finance Tracker</title>
+<link rel="stylesheet" href="style.css">
+</head>
+<body>
+
+<aside class="sidebar glass">
+    <img src="assets/logo.png" alt="Logo" class="sidebar-logo" style="width: 70%; height: 17%;">
+    <a href="dashboard.html">Dashboard</a>
+    <a href="income.html">Income</a>
+    <a href="expenses.html">Expenses</a>
+    <a href="profile.html" class="active">Profile</a>
+    <a href="logout.html">Logout</a>
+</aside>
+<header class="top-header">
+    <div class="app-logo"><span><i>Spend Less,Save More</i></span></div>
+</header>
+<div class="container">
+    <div class="card profile-header">
+        <img id="profileImg" src="assets/avatar-1.png" alt="Avatar">
+        <div>
+            <h2 id="name">Anonymous</h2>
+            <span class="role" id="role">Abc</span>
+            <p id="email">user@example.com</p>
+        </div>
+        <button id="editProfile">Edit</button>
+    </div>
+
+    <div class="summary-grid">
+        <div class="card">
+            <h4>Total Balance</h4>
+            <p class="green" id="totalBalance" style="color: var(--green); font-weight: bold;"></p>
+        </div>
+
+        <div class="card">
+            <h4>Monthly Income</h4>
+            <p class="blue" id="monthlyIncome" style="color: var(--green); font-weight: bold;"></p>
+        </div>
+
+        <div class="card">
+            <h4>Monthly Expenses</h4>
+            <p class="red" id="monthlyExpenses" style="color: var(--red); font-weight: bold;"></p>
+        </div>
+
+        <div class="card">
+            <h4>Savings</h4>
+            <p class="orange" id="savings" style="font-weight: bold; color: var(--green);"></p>
+        </div>
+    </div>
+</div>
+
+<script src="script.js"></script>
+
+</body>
+</html>

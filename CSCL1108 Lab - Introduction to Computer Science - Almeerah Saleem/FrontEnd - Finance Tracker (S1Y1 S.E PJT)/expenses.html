@@ -1,0 +1,99 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+<meta charset="UTF-8">
+<meta name="viewport" content="width=device-width, initial-scale=1.0">
+<title>Expenses | Finance Tracker</title>
+<link rel="stylesheet" href="style.css">
+</head>
+<body>
+
+<aside class="sidebar glass">
+    <img src="assets/logo.png" alt="Logo" class="sidebar-logo" style="width: 70%; height: 17%;">
+    <a href="dashboard.html">Dashboard</a>
+    <a href="income.html">Income</a>
+    <a href="expenses.html" class="active">Expenses</a>
+    <a href="profile.html">Profile</a>
+    <a href="logout.html">Logout</a>
+</aside>
+<header class="top-header">
+    <div class="app-logo"><span><i>Spend Less,Save More</i></span></div>
+</header>
+<div class="container">
+    <div class="card center">
+        <h2>Expenses This Month</h2>
+        <div class="monthly-amount" id="monthlyExp" style="color: var(--red); font-weight: bold;">PKR 0</div>
+    </div>
+        
+    <div class="card">
+        <h2>Add Expense</h2>
+        <div class="form-row" style="display: flex; flex-wrap: wrap; gap: 15px; margin-bottom: 25px;">
+            <input type="date" id="expenseDate" value="">
+            <select id="expenseCategory">
+                <option>Food & Drinks</option>
+                <option>Utilities</option>
+                <option>Groceries</option>
+                <option>Shopping</option>
+                <option>Transport</option>
+                <option>Entertainment</option>
+                <option>Health & Fitness</option>
+                <option>Home</option>
+                <option>Savings & Investments</option>
+                <option>Custom</option>
+            </select>
+            <input type="text" id="expenseItem" placeholder="Item">
+            <input type="number" id="expenseAmount" value="" placeholder="Amount">
+            <button onclick="addExpense()">Add</button>
+        </div>
+
+        <div class="scroll-box">
+            <table>
+                <!-- <thead><tr><th>Date</th><th>Category</th><th>Item</th><th>Amount</th></tr></thead> -->
+                <tbody id="expenseTable"><tr><td colspan="4">No expenses yet</td></tr></tbody>
+            </table>
+        </div>
+    </div>
+
+    <div class="bottom-section">
+        
+        <div class="card">
+            <h2>Recent Expenses</h2>
+            <div class="filters">
+                <select id="recentCategory">
+                    <option>All Categories</option> <option>Food & Drinks</option>
+                    <option>Utilities</option>
+                    <option>Groceries</option>
+                    <option>Shopping</option>
+                    <option>Transport</option>
+                    <option>Entertainment</option>
+                    <option>Health & Fitness</option>
+                    <option>Home</option>
+                    <option>Savings & Investments</option>
+                    <option>Custom</option>
+                </select>
+                <select id="filterDateRange" onchange="toggleCustomDate(this.value)">
+                    <option value="All">All Time</option>
+                    <option value="LastMonth">Last Month</option>
+                    <option value="Last3Months">Last 3 Months</option>
+                    <option value="Last6Months">Last 6 Months</option>
+                    <option value="LastYear">Last Year</option>
+                    <option value="Custom">Custom</option>
+                </select>
+
+                <input type="date" id="startDate" style="display:none">
+                <input type="date" id="endDate" style="display:none">
+
+                <button class="btn-action" id="btnFilterExpense" style="margin-bottom: 15px;">Apply</button>
+            </div>
+            <table>
+                <thead><tr><th>Date</th><th>Category</th><th>Item</th><th>Amount</th></tr></thead>
+                <tbody id="recentExpenses"><tr><td colspan="3">No expenses yet</td></tr></tbody>
+            </table>
+        </div>
+
+    </div>
+</div>
+<script src="script.js"></script>
+
+</body>
+</html>
